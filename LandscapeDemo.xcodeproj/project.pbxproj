@@ -13,6 +13,8 @@
 		C28977B820ECDE6100DD921D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C28977B720ECDE6100DD921D /* Assets.xcassets */; };
 		C28977BB20ECDE6100DD921D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C28977B920ECDE6100DD921D /* LaunchScreen.storyboard */; };
 		C28977BE20ECDE6100DD921D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C28977BD20ECDE6100DD921D /* main.m */; };
+		C28977C620ECDE9C00DD921D /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C28977C520ECDE9C00DD921D /* FirstVC.m */; };
+		C28977C920ECDEBB00DD921D /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C28977C820ECDEBB00DD921D /* SecondVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		C28977BA20ECDE6100DD921D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C28977BC20ECDE6100DD921D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C28977BD20ECDE6100DD921D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C28977C420ECDE9C00DD921D /* FirstVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
+		C28977C520ECDE9C00DD921D /* FirstVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
+		C28977C720ECDEBB00DD921D /* SecondVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondVC.h; sourceTree = "<group>"; };
+		C28977C820ECDEBB00DD921D /* SecondVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,10 @@
 				C28977AF20ECDE6100DD921D /* AppDelegate.m */,
 				C28977B120ECDE6100DD921D /* ViewController.h */,
 				C28977B220ECDE6100DD921D /* ViewController.m */,
+				C28977C420ECDE9C00DD921D /* FirstVC.h */,
+				C28977C520ECDE9C00DD921D /* FirstVC.m */,
+				C28977C720ECDEBB00DD921D /* SecondVC.h */,
+				C28977C820ECDEBB00DD921D /* SecondVC.m */,
 				C28977B420ECDE6100DD921D /* Main.storyboard */,
 				C28977B720ECDE6100DD921D /* Assets.xcassets */,
 				C28977B920ECDE6100DD921D /* LaunchScreen.storyboard */,
@@ -143,7 +153,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C28977B320ECDE6100DD921D /* ViewController.m in Sources */,
+				C28977C620ECDE9C00DD921D /* FirstVC.m in Sources */,
 				C28977BE20ECDE6100DD921D /* main.m in Sources */,
+				C28977C920ECDEBB00DD921D /* SecondVC.m in Sources */,
 				C28977B020ECDE6100DD921D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

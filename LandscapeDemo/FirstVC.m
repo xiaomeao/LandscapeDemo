@@ -1,5 +1,5 @@
 //
-//  ViewController.m
+//  FirstVC.m
 //  LandscapeDemo
 //
 //  Created by do on 2018/7/4.
@@ -8,32 +8,32 @@
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-#import "ViewController.h"
 #import "FirstVC.h"
+#import "SecondVC.h"
 
-@interface ViewController ()
+@interface FirstVC ()
 
 @end
 
-@implementation ViewController
+@implementation FirstVC
 
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
-    self.title = @"Root";
+    self.title = @"First";
+    self.view.backgroundColor = UIColorFromRGB(0xFDD555);\
     
     UIButton *pushBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     pushBtn.frame = CGRectMake((self.view.frame.size.width - 100) / 2., (self.view.frame.size.height - 42) / 2., 100, 42);
     pushBtn.titleLabel.font = [UIFont systemFontOfSize:16];
-    [pushBtn setTitle:@"跳转1" forState:UIControlStateNormal];
-    [pushBtn setTitleColor:UIColorFromRGB(0x202020) forState:UIControlStateNormal];
+    [pushBtn setTitle:@"跳转2" forState:UIControlStateNormal];
     [pushBtn addTarget:self action:@selector(pushTo) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:pushBtn];
 }
 
 - (void)pushTo
 {
-    FirstVC *vc = [[FirstVC alloc] init];
+    SecondVC *vc = [[SecondVC alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
