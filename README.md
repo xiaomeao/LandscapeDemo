@@ -3,4 +3,4 @@
 
 
 ### 首先在 AppDelegate.m文件下添加如下方法：
-![](http://github.com/xiaomeao/LandscapeDemo/raw/master/READMEIMG/twoImg.png)
+![](https://github.com/xiaomeao/LandscapeDemo/raw/master/READMEIMG/twoImg.png)
