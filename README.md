@@ -5,8 +5,10 @@
 ##### 首先在 AppDelegate.m文件下添加以下方法：
 
 ```objc
-@implementation AppDelegate
+#import "AppDelegate.h"
 #import "SecondVC.h"
+
+@implementation AppDelegate
 
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
 {
