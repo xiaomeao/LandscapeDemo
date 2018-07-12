@@ -3,16 +3,71 @@
 
 
 ##### 首先在 AppDelegate.m文件下添加以下方法：
-![](https://github.com/xiaomeao/LandscapeDemo/raw/master/READMEIMG/twoImg.png)
+
+```objc
+@implementation AppDelegate
+
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+    //Step 1
+    //由一个导航控制器管理视图
+    if ([self.window.rootViewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
+        if ([nav.topViewController isKindOfClass:[SecondVC class]]) {
+            //由子视图去管理自己的方向
+            return [nav.topViewController supportedInterfaceOrientations];
+        }
+    }
+}
+```
 
 ##### 然后在你需要横竖屏切换的类中添加以下方法：
-![](https://github.com/xiaomeao/LandscapeDemo/raw/master/READMEIMG/threeImg.png)
+```objc
+#import "SecondVC.h"
+
+@implementation SecondVC
+
+- (BOOL)prefersStatusBarHidden
+{
+    if ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft) {
+        //横屏时隐藏状态栏
+        return YES;
+    }
+    return NO;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    // 支持横竖屏切换
+    return UIInterfaceOrientationMaskLandscapeRight | UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation 
+{
+    // 默认竖屏
+    return UIInterfaceOrientationPortrait;
+}
+@end
+```
 
 ##### 并且在控制器中添加通知方法
-![](https://github.com/xiaomeao/LandscapeDemo/raw/master/READMEIMG/fourImg.png)
+```objc
+- (void)viewDidLoad 
+{
+    [super viewDidLoad];
+    //屏幕旋转通知
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange) 
+    name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+```
 
 ##### 记得在控制器移除时移除对应通知
-[[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications]
-
+```objc
+- (void)dealloc
+{
+    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
+}
+```
 
 
