@@ -6,6 +6,7 @@
 
 ```objc
 @implementation AppDelegate
+#import "SecondVC.h"
 
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
 {
@@ -18,6 +19,8 @@
             return [nav.topViewController supportedInterfaceOrientations];
         }
     }
+    //所有控制器只允许竖屏
+    return UIInterfaceOrientationMaskPortrait;
 }
 ```
 
@@ -27,6 +30,7 @@
 
 @implementation SecondVC
 
+//状态栏的显示和隐藏
 - (BOOL)prefersStatusBarHidden
 {
     if ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft) {
@@ -59,6 +63,15 @@
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange) 
     name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
+- (void)deviceOrientationDidChange
+{
+    NSLog(@"deviceOrientation --- %ld", (long)[UIDevice currentDevice].orientation);
+    if([UIDevice currentDevice].orientation == UIDeviceOrientationPortrait) {
+    } 
+    else if ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft) {
+    }
 }
 ```
 
